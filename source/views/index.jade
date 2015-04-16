@@ -1,0 +1,23 @@
+extend layout
+
+block main
+  //- page header
+  include components/header
+
+  //- main part of page
+  main
+    .container
+      include components/nav
+    .container
+      include components/slider
+    .container
+      include components/best-sellers
+    .container
+      .col-md-8
+        include components/review
+      .col-md-4
+        include components/newsletter
+    .container
+      include components/pagination
+  footer
+    include components/footer

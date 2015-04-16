@@ -1,0 +1,14 @@
+node_modules
+
+
+dist/assets/angular
+dist/assets/angular-animate
+dist/assets/angular-route
+dist/assets/bootstrap
+dist/assets/font-awesome
+dist/assets/jquery
+
+dist/css/style.css
+dist/js/app.js
+
+dist/index.html
