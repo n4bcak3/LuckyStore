@@ -1,0 +1,114 @@
+@slider-btn-color: #d8dde1;
+@slider-btn-size: 60px;
+
+.cards-slider-controls{
+  position: relative;
+  height: 50px;
+  >hr {
+    // box-shadow: 0px -1px 0px 0px rgba(215,215,215,1);
+    border-top: 1px #d7d7d7 solid;
+    border-bottom: 1px #fff solid;
+  }
+  padding: 24px 70px 0 70px;
+  > h3{
+    top: 0;
+    left: 50%;
+    margin-left: -85px;
+    width: 170px;
+    background-color: #f3f3f3;
+    position: absolute;
+    font-family: @opensans;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+.cards-slider{
+  margin-top: 25px;
+  > div{
+    padding: 20px 0;
+  }
+
+  button{
+    color: #aaa;
+    &:hover{
+      color: #777;
+    }
+    top: -60px;
+
+    &.slick-prev{
+      left: 15px;
+    }
+
+    &.slick-next{
+      right: 15px;
+    }
+
+    i{
+      box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.22);
+      line-height: 40px;
+      border-radius: 5px;
+      background-color: #fff;
+      font-size: 30px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.carousel{
+  .item{
+    img{
+      width: 100%;
+    }
+  }
+
+  button{
+    height: @slider-btn-size;
+    width: @slider-btn-size;
+    border-radius: @slider-btn-size/2;
+    border: 3px @slider-btn-color solid;
+    font-size: @slider-btn-size;
+    text-align: center;
+    margin-top: -30px;
+    i{    
+      margin: -4px 0 0 0px;
+      top: 0;
+      line-height: @slider-btn-size;
+      height: @slider-btn-size;
+      width: @slider-btn-size - 4;
+      position: absolute;
+      color: @slider-btn-color;
+    }
+    &.slick-prev{
+      i{
+        left: -3px;
+      }
+      left: 20px;
+    }
+
+    &.slick-next{
+      i{
+        right: -3px;
+      }
+      right: 20px;
+    }
+  }
+
+  .slick-dots{
+    bottom: 20px;
+    > li {
+      button{
+        background-color: @slider-btn-color;
+      }
+      &.slick-active{
+        button{
+          background-color: #f6b63a;
+        }
+      }
+    }
+
+  }
+}

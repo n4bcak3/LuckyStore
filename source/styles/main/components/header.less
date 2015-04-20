@@ -1,0 +1,22 @@
+header{
+  .lucky{
+    top:0;
+    width: 100%;
+    position: absolute;
+    background-image:   url('/img/lucky.jpg');
+    height: 4px;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 20s linear infinite;
+  }
+  .brand{
+    height: 170px;
+    margin: 50px auto;
+    width: 380px;
+  }
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
