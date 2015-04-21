@@ -352,7 +352,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    60px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -360,16 +360,16 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
-@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-bg:                #3c5569;
+@navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                #777;
-@navbar-default-link-hover-color:          #333;
-@navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
-@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-color:                #fff;
+@navbar-default-link-hover-color:          #fff;
+@navbar-default-link-hover-bg:             lighten(@navbar-default-bg, 4%);
+@navbar-default-link-active-color:         #fff;
+@navbar-default-link-active-bg:            lighten(@navbar-default-bg, 10%);;
+@navbar-default-link-disabled-color:       transparent;
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
@@ -450,9 +450,9 @@
 @pagination-hover-bg:                  @gray-lighter;
 @pagination-hover-border:              #ddd;
 
-@pagination-active-color:              #fff;
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
+@pagination-active-color:              #ef8742;
+@pagination-active-bg:                 inherit;
+@pagination-active-border:             #ef8742;
 
 @pagination-disabled-color:            @gray-light;
 @pagination-disabled-bg:               #fff;

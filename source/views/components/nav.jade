@@ -7,21 +7,44 @@ nav(role="navigation").navbar.navbar-default
             span.icon-bar
           a(href="#" ).navbar-brand Title
         .collapse.navbar-collapse.navbar-ex1-collapse
-          ul.nav.navbar-nav 
-            li.active: a(href="#") Link
-            li: a(href="#") Link
-          form(role="search").navbar-form.navbar-left
-            .form-group 
-              input(type="text", placeholder="Search").form-control
-            button(type="submit").btn.btn-default Submit
-          ul.nav.navbar-nav.navbar-right
-            li: a(href="#") Link
+          
+          ul.nav.navbar-nav.nav-menu
             li.dropdown
               a.dropdown-toggle(href="#", data-toggle="dropdown",role="button", aria-expanded="false")
-                | Dropdown 
+                | Men 
                 span.caret
               ul.dropdown-menu(role="menu")
                 li: a(href="#") Action
                 li: a(href="#") Another action
                 li: a(href="#") Something else here
                 li: a(href="#") Separated link
+
+            li.dropdown
+              a.dropdown-toggle(href="#", data-toggle="dropdown",role="button", aria-expanded="false")
+                | Women 
+                span.caret
+              ul.dropdown-menu(role="menu")
+                li: a(href="#") Action
+                li: a(href="#") Another action
+                li: a(href="#") Something else here
+                li: a(href="#") Separated link
+
+            li: a(href="#") Sale!
+            li: a(href="#") Login
+            li: a(href="#") Contacts
+
+
+          //- form(role="search").navbar-form.navbar-left
+            .form-group 
+              input(type="text", placeholder="Search").form-control
+            button(type="submit").btn.btn-default Submit
+          ul.nav.navbar-nav.navbar-right
+            li: a(href="#") 
+              .visible-xs-block Sale!
+              .hidden-xs: i.fa.fa-search
+            li: a(href="#") 
+              .visible-xs-block Sale!
+              .hidden-xs: i.fa.fa-trash-o
+            li: a(href="#") 
+              .visible-xs-block Sale!
+              .hidden-xs: i.fa.fa-newspaper-o

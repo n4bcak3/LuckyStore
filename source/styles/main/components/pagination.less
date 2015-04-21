@@ -1,0 +1,50 @@
+.full-pagination{
+  text-align: center;
+  font-family: @opensans;
+
+  >ul{
+    width: 100%;
+    .baseform;
+
+    li{
+      vertical-align: middle;
+      display: inline-block;
+
+      &:last-child, &:first-child{
+        a{
+          font-size: 10.5pt;
+        }
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &:first-child{
+        float: left;
+        i {
+          padding: 0 12px 0 2px;
+          float: left;
+        }
+      }
+      &:last-child{
+        float: right;
+        i {
+          padding: 0 2px 0 12px;
+          float: right;
+        }
+      }
+
+      a{
+        font-size: 12pt;
+        height: 50px;
+        line-height: 30px;
+        color: #aaa;
+        vertical-align: middle;
+        border: 0;
+        i{
+          display: inline;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

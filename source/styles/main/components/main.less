@@ -1,6 +1,8 @@
+@import '../../bootstrap/variables.less';
+
 main{
-  background-color: #f3f3f3;
   
+
   .container {
     padding: 0 0 50px 0;
     
@@ -9,4 +11,106 @@ main{
     }
   }
 
+
+  nav{
+
+    font-family: @opensans;
+    font-size: 12pt;
+    text-transform: uppercase;
+
+
+
+    .nav-menu{
+        
+
+      @media (min-width: @screen-xs-min) {
+        width: 1170px - 180px - 70px ;
+        > li{
+          width: 20%;
+        }
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #546a7b;
+      }
+    }
+
+    &.navbar{
+      border-width: 0px;
+      @media (min-width: @screen-xs-min) {
+        .baseform-shadow;
+      }
+    }
+
+
+    .navbar-header{
+      @media (min-width: @screen-xs-min) {
+        width: 70px;
+      }
+      .make-nav-shadows(0px,1px);
+    }
+
+
+    .navbar-nav{
+      text-align: center;
+      &.nav{
+        > li{
+          .make-nav-shadows(1px,1px);
+
+          &:first-child{
+            .make-nav-shadows(1px,1px);          
+          }
+
+          &:last-child{
+            .make-nav-shadows(1px,0px);
+          }
+        }
+      }
+      &.nav.navbar-right{
+        @media (min-width: @screen-xs-min) {
+          border-left-width: 1px;
+          border-left-style: solid;
+          border-left-color: #324758;
+          width: 180px;
+        }
+        > li{
+          
+          @media (min-width: @screen-xs-min) {
+            font-size: 22px;
+            width: 33.333%;
+            a{
+              line-height: 60px;
+              height: 60px;
+              padding: 0;
+            }
+          }
+          &:first-child{
+            .make-nav-shadows(0px,1px);          
+          }
+          &:last-child{
+            .make-nav-shadows(1px,0px);
+          }
+        }
+      }
+      &.nav-fullwidth{
+        
+      }
+
+    }
+
+  }
+}
+
+
+.make-nav-shadows(@left, @right){
+  @media (min-width: @screen-xs-min) {
+  
+    border-left-width: @left;
+    border-left-style: solid;
+    border-left-color: #546a7b;
+
+    border-right-width: @right;
+    border-right-style: solid;
+    border-right-color: #324758;
+
+  }
 }
