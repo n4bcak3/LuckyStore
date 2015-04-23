@@ -1,14 +1,10 @@
 @import '../../bootstrap/variables.less';
 
 main{
-  
+  padding-top: 50px;
 
   .container {
-    padding: 0 0 50px 0;
-    
-    &:first-child{
-      padding: 50px 0;
-    }
+    padding: 0 0 30px 0;
   }
 
 
@@ -18,16 +14,51 @@ main{
     font-size: 12pt;
     text-transform: uppercase;
 
+    @nav-clover-hover-color: #B8DBF8;
+    @nav-clover-size : 36px;
+
+    .navbar-brand{
+      width: 70px;
+      padding: 0;
+
+      .clover-logo{
+        margin: (60-@nav-clover-size)/2 auto (60-@nav-clover-size)/2 auto;
+        .make-clover(#3c5569,#fff,@nav-clover-size,0px);
+      }
+
+      &:hover{
+        .clover-logo{
+          color: @nav-clover-hover-color;
+          .leaf{
+            &:before,&:after{
+              background-color: @nav-clover-hover-color;
+            }
+          }
+        }
+      }
+
+    }
 
 
     .nav-menu{
-        
 
-      @media (min-width: @screen-xs-min) {
-        width: 1170px - 180px - 70px ;
+      @media (min-width: @screen-sm-min) {
+        width: @container-sm - 180px - 70px ;
+      }
+
+      @media (min-width: @screen-md-min) {
+        width: @container-md - 180px - 70px ;
+      }
+
+      @media (min-width: @screen-lg-min) {
+        width: @container-lg - 180px - 70px ;
+      }
+
+      @media (min-width: @screen-sm-min) {
         > li{
           width: 20%;
         }
+
         border-right-width: 1px;
         border-right-style: solid;
         border-right-color: #546a7b;
@@ -43,7 +74,8 @@ main{
 
 
     .navbar-header{
-      @media (min-width: @screen-xs-min) {
+      width: 100%;
+      @media (min-width: @screen-sm-min) {
         width: 70px;
       }
       .make-nav-shadows(0px,1px);
@@ -63,10 +95,14 @@ main{
           &:last-child{
             .make-nav-shadows(1px,0px);
           }
+          a{
+            transition: background-color 0.2s;
+            white-space: nowrap;
+          }
         }
       }
       &.nav.navbar-right{
-        @media (min-width: @screen-xs-min) {
+        @media (min-width: @screen-sm-min) {
           border-left-width: 1px;
           border-left-style: solid;
           border-left-color: #324758;
@@ -74,7 +110,7 @@ main{
         }
         > li{
           
-          @media (min-width: @screen-xs-min) {
+          @media (min-width: @screen-sm-min) {
             font-size: 22px;
             width: 33.333%;
             a{

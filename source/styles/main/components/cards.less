@@ -1,8 +1,16 @@
+.sale-item{
+  padding: 15px;
+}
+
 .card{
   .baseform;
   color: @darktext;
   font-family: @opensans;
   .pic{
+    background-image: url('/img/icons/eye.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
     position: relative;
     padding-bottom: 100%;
     z-index: 2;
@@ -29,11 +37,10 @@
   .info{
     padding: 5px 16px 20px 16px;
     .price{
-      margin-bottom: 5px;
       >span{
         vertical-align: middle;
         line-height: 28px;
-        font-size: 22px;
+        font-size: 15pt;
         &::before{
           content: '$';
           color: @lighttext;
@@ -44,7 +51,7 @@
           line-height: 20px;
           height: 20px;
           padding: 0 0 0 8px;
-          font-size: 14px;
+          font-size: 10.5pt;
           color: @lighttext;
         }
       }
@@ -52,10 +59,18 @@
   .btn{
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 7.5pt;
+    line-height: 7.5pt;
+      &:hover{
+        background-color: #2799c9;
+        color: #fff;
+        border-color: #2799c9;
+      }
     }
   }
-
+  .sale{
+    text-transform: uppercase;
+  }
   .sale-card-label{
     .card-color-label(#9cbf3e)
   }

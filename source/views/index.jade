@@ -1,4 +1,4 @@
-extend layout
+extend layout/layout
 
 block main
   //- page header
@@ -8,16 +8,17 @@ block main
   main
     .container
       include components/nav
-    .container
-      include components/slider
-    .container
-      include components/best-sellers
-    .container
-      .col-md-8
-        include components/review
-      .col-md-4
-        include components/newsletter
-    .container
-      include components/pagination
+    div(ng-view)
+    //- .container
+    //-   include components/slider
+    //- .container
+    //-   include components/best-sellers
+    //- .container
+    //-   .col-md-8
+    //-     include components/review
+    //-   .col-md-4.col-md-offset-0.col-xs-offset-2.col-xs-8
+    //-     include components/newsletter
+    //- .container
+    //-   include components/pagination
   footer
     include components/footer

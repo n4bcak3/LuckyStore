@@ -15,7 +15,88 @@ header{
   .brand{
     height: 170px;
     margin: auto;
-    width: 380px;
+    color: #fff;
+    font-family: @opensans;
+    text-align: center;
+    .clover{
+
+      margin: auto;
+      .make-clover(#31485b, #fff,80px,1px);
+    }
+    h1{
+      display: inline;
+      line-height: 45px;
+      padding: 3px 0;
+      font-size: 45px;
+      border-bottom: 1px #758694 solid;
+    }
+
+    h2{
+      text-transform: uppercase;
+      padding: 20px 0 0 0;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+
+    .flag{
+      position: absolute;  
+      border-left: 1px #728391 solid;
+      padding-bottom: 10px;
+      margin-top: -50px;
+      height: 54px;
+      &:after{
+        content: '';
+        height: 3px;
+        width: 4px;
+        background-color: #728391;
+        position: absolute;
+        bottom: 0;
+        border-radius: 50%;
+        left: -3px;
+      }
+      span{
+        height: 32px;
+        width: 54px;
+        position: absolute;
+        @color: #9cbf3e;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 9px;
+        text-transform: uppercase;
+        // .make-flag(#9cbf3e);
+          background-color: @color;
+        &:after,&:before{
+        }
+        &:after{
+          content: "";
+          position: absolute;
+          right: -5px;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          border-bottom: 14px solid @color;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+        }
+
+        &:before{
+          content: "";
+          position: absolute;
+          right: -5px;
+          top: 0;
+          width: 0;
+          height: 0;
+          border-top: 14px solid @color;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+        }
+
+      }
+
+    }
   }
 }
 

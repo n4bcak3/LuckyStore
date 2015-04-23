@@ -13,32 +13,38 @@
       top: 3px;
       color: #fff;
       font-weight: bold;
-      background-color: @color;
       position: absolute;
       z-index: 4;
-      &:after{
-        content: "";
-        position: absolute;
-        left: -6px;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-bottom: 14px solid @color;
-        border-right: 6px solid transparent;
-        border-left: 6px solid transparent;
-      }
-      &:before{
-        content: "";
-        position: absolute;
-        left: -6px;
-        top: 0;
-        width: 0;
-        height: 0;
-        border-top: 14px solid @color;
-        border-right: 6px solid transparent;
-        border-left: 6px solid transparent;
-      }
+      .make-flag(@color);
     } 
+}
+
+.make-flag(@color){
+  background-color: @color;
+
+  &:after{
+    content: "";
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 14px solid @color;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
+
+  &:before{
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 14px solid @color;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
 }
 
 .baseform{
@@ -50,4 +56,98 @@
 
 .baseform-shadow{
   box-shadow: 0px 0px 8px 1px rgba(0,0,0,.15);
+}
+
+
+// clover constructor
+@clover-bg-default: #3a5367;
+@clover-color-default: #fff;
+
+
+.make-clover(@clover-bg: @clover-bg-default, @clover-color: @clover-color-default, @clover-size: 100px, @leaf-center-scale: 5px){
+  
+  @clover-width: @clover-size;
+  @clover-height: @clover-size;
+  @leaf-width: @clover-size/2;
+  @leaf-height: @clover-size/2.4;
+  @color-hover-time : 0.6s;
+  
+  position: relative;
+  font: normal normal normal 14px/1 FontAwesome;
+  height: @clover-size;
+  width: @clover-size;
+  color: @clover-color;
+  background-color: @clover-bg;
+  transition: color @color-hover-time;
+
+  &:before{
+    position: absolute;
+    width: @clover-size/5;
+    height: @clover-size/5;
+    left: 50%;
+    top: 50%;
+    margin: -@clover-size/10 0 0 -@clover-size/10;
+    font-size: @clover-size/5;
+    line-height: @clover-size/5;
+    text-align: center;
+    content: '\f013';  
+    z-index: 2;
+  } 
+  &:after{
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    width: @clover-size/4;
+    height: @clover-size/4;
+    background-color: @clover-bg;
+    left: 50%;
+    top: 50%;
+    margin: -@clover-size/8 0 0 -@clover-size/8 ;
+    content: ' ';
+  }
+  
+  > .leaf{
+    &:nth-child(1){
+      .new-leaf(0, (@clover-width/2 - @leaf-width/2 ) , 0 + @leaf-center-scale,@clover-color);
+    }
+    &:nth-child(2){
+      .new-leaf(90deg, 0 + @leaf-center-scale , (@clover-height/2 - @leaf-height/2 ) ,@clover-color);
+    }
+    &:nth-child(3){
+      .new-leaf(180deg, (@clover-width/2 - @leaf-width/2 ), @clover-height - @leaf-height - @leaf-center-scale ,@clover-color);
+    }
+    &:nth-child(4){
+      .new-leaf(270deg, (@clover-width - @leaf-width - @leaf-center-scale ), (@clover-height/2 - @leaf-height/2 ) ,@clover-color);
+    }
+  }
+}
+
+.new-leaf(@angle: 0,@left:0,@top:0, @clover-color: #fff){
+  left: @left;
+  top: @top;
+  /* border: 1px black solid; */
+  position: absolute;
+    width: @leaf-width;
+    height: @leaf-height;
+    transform: rotate(-@angle);
+  &:before,
+  &:after {
+      transition: background-color @color-hover-time;
+      position: absolute;
+      content: "";
+      left: @leaf-width/2;
+      top: 0;
+      width: @leaf-width/2;
+      height: @leaf-height;
+      background: @clover-color;
+      border-radius: @leaf-width/2 @leaf-width/2 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+  }
+  &:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin :100% 100%;
+  }
+  
 }

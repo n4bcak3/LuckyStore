@@ -67,6 +67,17 @@ gulp.task('views', function(){
       .pipe(notify({ message: 'Views jade task complete' }));
 })
 
+gulp.task('partials', function(){
+  return gulp.src('source/views/partials/*.jade')
+      .pipe(jade({
+          locals: {}  
+      }))
+      .on('error', notify.onError("Error: <%= error.message %>"))
+      .pipe(gulp.dest('dist/partials'))
+      .pipe(server.notify())
+      // .pipe(refresh(lrserver))
+      .pipe(notify({ message: 'Views[Partials] jade task complete' }));
+})
 
 gulp.task('build',['styles:main','styles:bootstrap','app','views']);
 
@@ -86,4 +97,7 @@ gulp.task('watch', function(){
   gulp.watch(['source/styles/bootstrap/**/*.less'],['styles:bootstrap']);
 
   gulp.watch(['source/views/**/*.jade'],['views']);
+
+  gulp.watch(['source/views/partials/*.jade'],['partials']);
+  
 });

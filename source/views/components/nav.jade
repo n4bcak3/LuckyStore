@@ -1,11 +1,15 @@
-nav(role="navigation").navbar.navbar-default
+nav(role="navigation",menu).navbar.navbar-default
         .navbar-header
           button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a(href="#" ).navbar-brand Title
+          a(href="/" ).navbar-brand: .clover-logo
+              .leaf
+              .leaf
+              .leaf
+              .leaf
         .collapse.navbar-collapse.navbar-ex1-collapse
           
           ul.nav.navbar-nav.nav-menu
@@ -29,9 +33,9 @@ nav(role="navigation").navbar.navbar-default
                 li: a(href="#") Something else here
                 li: a(href="#") Separated link
 
-            li: a(href="#") Sale!
-            li: a(href="#") Login
-            li: a(href="#") Contacts
+            li(ng-class='{"active": isActive("/sale")}'): a(ng-href="/sale") Sale!
+            li(ng-class='{"active": isActive("/signin")}'): a(href="/signin") Login
+            li(ng-class='{"active": isActive("/contacts")}'): a(href="/contacts") Contacts
 
 
           //- form(role="search").navbar-form.navbar-left

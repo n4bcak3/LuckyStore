@@ -1,0 +1,36 @@
+.container
+  //- include ../components/best-sellers
+
+  .col-md-3.col-sm-4.col-xs-6.sale-item(ng-repeat='item in sale_items as result')
+    .card
+      .sale(ng-hide='{{item.label == null }}',class='{{item.label}}-card-label') 
+        span {{item.label}}!
+      .pic
+        img(src='http://placehold.it/500x500')
+      .title
+        | {{item.name}}
+      .info.row
+        .col-md-5.col-lg-6
+          .price
+            span {{item.price}}
+            span.old {{item.old_price}}
+        .col-sm-offset-5.col-sm-7.col-md-6.col-md-offset-0
+          .btn.btn-default
+            | Add to card
+.container
+  nav.full-pagination
+    ul.pagination.pagination-lg
+
+      li: a()
+        i.fa.fa-angle-left 
+        | previous
+
+      li(ng-repeat='n in [] | range: page_lenght', ng-class='{active: page == n}'): a(ng-click='changepage(n)') {{n}}
+      //- li(ng-class='{active: page == 2}'): a(ng-click='changepage(2)') 2
+      //- li(ng-class='{active: page == 3}'): a(ng-click='changepage(3)') 3
+      //- li: a(href="#") 4
+      //- li: a(href="#") 5
+
+      li: a() 
+        | next
+        i.fa.fa-angle-right

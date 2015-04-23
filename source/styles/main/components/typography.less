@@ -3,3 +3,28 @@
 @opensans: 'Open Sans', sans-serif;
 @darktext: #303030;
 @lighttext: #b0b0b0;
+
+i{
+
+  &.search{
+    .nav-icon('/img/icons/search.png');
+  }
+
+  &.bucket{
+    .nav-icon('/img/icons/bucket.png');
+  }
+
+  &.card{
+    .nav-icon('/img/icons/card.png'); 
+  }
+
+}
+
+.nav-icon(@icon){
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url(@icon);
+  background-repeat: no-repeat;
+  background-position: center;
+}
