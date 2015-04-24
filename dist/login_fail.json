@@ -1,0 +1,6 @@
+{
+  "message" : "Authorization failed",
+  "error" : {
+    "code" : 401
+  }
+}

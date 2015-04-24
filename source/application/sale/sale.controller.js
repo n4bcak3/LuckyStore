@@ -15,10 +15,28 @@ angular.module('LuckyStore')
     })
 
     $scope.changepage = function(p){
-      $scope.page = p;
+      if ($scope.page == p)
+        return
+      
+      if (typeof p == 'number'){        
+        $scope.page = p;
+      }
+      if (typeof p == 'string'){
+        if ((p == 'next') && ($scope.page < $scope.page_lenght-1) ){
+          $scope.page++;
+        } else {
+            if ((p == 'back') && ($scope.page > 1)){
+              $scope.page--;
+            } else {
+              return;
+            }
+          }
+      } 
+
+
 
       SaleProduction.query(function(data){
-        $scope.sale_items = data.slice(items_on_page*p, items_on_page*(p+1));
+        $scope.sale_items = data.slice(items_on_page*$scope.page, items_on_page*($scope.page+1));
       })
 
     }

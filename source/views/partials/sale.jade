@@ -21,7 +21,7 @@
   nav.full-pagination
     ul.pagination.pagination-lg
 
-      li: a()
+      li(ng-class='{disabled: page == 1}'): a(ng-click='changepage("back")')
         i.fa.fa-angle-left 
         | previous
 
@@ -31,6 +31,6 @@
       //- li: a(href="#") 4
       //- li: a(href="#") 5
 
-      li: a() 
+      li(ng-class='{disabled: page == page_lenght-1}'): a(ng-click='changepage("next")') 
         | next
         i.fa.fa-angle-right
